@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 import models.Product;
 import models.ProductComparator;
 
@@ -81,12 +82,49 @@ public class JohnAnnGrocery {
 //                = compareByPrice.thenComparing(compareProductByName);
 //        Collections.sort(products, compareProductsFirstByPriceAndThenByName);
 //        System.out.println(products);
-        Iterator itr = products.iterator();
-        while (itr.hasNext()) {
-            Product p = (Product) itr.next();
-            System.out.println(p.getName());
+//        Iterator itr = products.iterator();
+//        while (itr.hasNext()) {
+//            Product p = (Product) itr.next();
+//            System.out.println(p.getName());
+//        }
+        ArrayList<String> strings = new ArrayList();
+        Vector<String> vectors = new Vector<>();
+
+        List<Product> products2 = new Vector<>(Arrays.asList(new Product[]{
+            new Product("Orange", 1.80d, "Kgr"),
+            new Product("Apple", 1.20d, "Kgr"),
+            new Product("Mango", 3.45d, "Item"),
+            new Product("Mango", 2.45d, "Item")
+
+        }));
+
+//        for (Product product : products2) {
+//            System.out.println(product);
+//        }
+//
+//        System.out.println("Iterator");
+//        Iterator itr = products2.iterator();
+//        while (itr.hasNext()) {
+//            Product p = (Product) itr.next();
+//            System.out.println(p);
+//        }
+        products2.add(new Product("Banana", 1.87d, "Kgr"));
+        products2.remove(products2.get(2));
+
+        for (Product product : products2) {
+            System.out.println(product);
         }
 
+        System.out.println("Iterator");
+        Iterator itr = products2.iterator();
+        while (itr.hasNext()) {
+            Product p = (Product) itr.next();
+            System.out.println(p);
+        }
+
+//        Product temp = products2.get(0);
+//        products2.set(0, products2.get(3));
+//        products2.set(3, temp);
     }
 
     public static void compare() {
