@@ -8,7 +8,7 @@ package johnanngrocery;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import models.Product;
 import models.ProductComparator;
@@ -70,17 +70,23 @@ public class JohnAnnGrocery {
 //        
         //first name comparator
 //        Comparator<Employee> compareByFirstName = Comparator.comparing(Employee::getFirstName);
-        Comparator<Product> compareProductByName = Comparator.comparing(Product::getName);
-        Comparator<Product> compareByPrice = Comparator.comparing(Product::getPrice);
-        Comparator<Product> compareProducts = compareProductByName.thenComparing(compareByPrice);
+//        Comparator<Product> compareProductByName = Comparator.comparing(Product::getName);
+//        Comparator<Product> compareByPrice = Comparator.comparing(Product::getPrice);
+//        Comparator<Product> compareProducts = compareProductByName.thenComparing(compareByPrice);
+//
+//        Collections.sort(products, compareProducts);
+//        System.out.println(products);
+//
+//        Comparator<Product> compareProductsFirstByPriceAndThenByName
+//                = compareByPrice.thenComparing(compareProductByName);
+//        Collections.sort(products, compareProductsFirstByPriceAndThenByName);
+//        System.out.println(products);
+        Iterator itr = products.iterator();
+        while (itr.hasNext()) {
+            Product p = (Product) itr.next();
+            System.out.println(p.getName());
+        }
 
-        Collections.sort(products, compareProducts);
-        System.out.println(products);
-
-        Comparator<Product> compareProductsFirstByPriceAndThenByName
-                = compareByPrice.thenComparing(compareProductByName);
-        Collections.sort(products, compareProductsFirstByPriceAndThenByName);
-        System.out.println(products);
     }
 
     public static void compare() {
