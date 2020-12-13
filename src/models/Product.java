@@ -5,14 +5,13 @@
  */
 package models;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 /**
  *
  * @author mac
  */
-public class Product implements Comparable, Comparator {
+public class Product { //implements Comparable, Comparator {
 
     private String name;
     private double price;
@@ -90,7 +89,7 @@ public class Product implements Comparable, Comparator {
         return sb.toString();
     }
 
-    @Override
+    //@Override
     public int compareTo(Object o) {
         Product other = (Product) o;
         double k = this.price - other.price;
@@ -103,9 +102,9 @@ public class Product implements Comparable, Comparator {
         return (0);
     }
 
-    @Override
+    //@Override
     public int compare(Object o1, Object o2) {
-
+        compareTo(o2);
         return (0);
     }
 
