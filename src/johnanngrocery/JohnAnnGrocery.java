@@ -29,7 +29,8 @@ public class JohnAnnGrocery {
         List<Product> products = new ArrayList<>(Arrays.asList(new Product[]{
             new Product("Orange", 1.80d, "Kgr"),
             new Product("Apple", 1.20d, "Kgr"),
-            new Product("Mango", 3.45d, "Item")
+            new Product("Mango", 3.45d, "Item"),
+            new Product("Mango", 2.45d, "Item")
 
         }));
 //        /*
