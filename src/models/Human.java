@@ -40,7 +40,7 @@ public class Human implements IHuman {
     }
 
     @Override
-    public List<GroceryProduct> order(List<GroceryProduct> shoppingList) {
+    public List<GroceryProduct> order(GroceryStore store, List<GroceryProduct> shoppingList) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

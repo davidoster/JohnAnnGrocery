@@ -5,13 +5,15 @@
  */
 package models;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
  *
  * @author mac
  */
-public class Product {
+public class Product implements Comparable, Comparator {
+
     private String name;
     private double price;
     private String unit;
@@ -57,6 +59,7 @@ public class Product {
 
     @Override
     public boolean equals(Object obj) {
+        // same reference
         if (this == obj) {
             return true;
         }
@@ -73,6 +76,7 @@ public class Product {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        // same reference AND same name AND same price
         return true;
     }
 
@@ -85,6 +89,24 @@ public class Product {
         sb.append('}');
         return sb.toString();
     }
-    
-    
+
+    @Override
+    public int compareTo(Object o) {
+        Product other = (Product) o;
+        double k = this.price - other.price;
+        if (k > 0) {
+            return (1);
+        }
+        if (k < 0) {
+            return (-1);
+        }
+        return (0);
+    }
+
+    @Override
+    public int compare(Object o1, Object o2) {
+
+        return (0);
+    }
+
 }

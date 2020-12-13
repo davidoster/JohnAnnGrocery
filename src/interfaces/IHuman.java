@@ -2,6 +2,7 @@ package interfaces;
 
 import java.util.List;
 import models.GroceryProduct;
+import models.GroceryStore;
 import models.ProcessedShoppingList;
 
 /*
@@ -16,7 +17,7 @@ import models.ProcessedShoppingList;
 public interface IHuman {
 
     // step 1 - Ann gives the order
-    List<GroceryProduct> order(List<GroceryProduct> shoppingList);
+    List<GroceryProduct> order(GroceryStore store, List<GroceryProduct> shoppingList);
 
     // step 3
     void pays(ProcessedShoppingList processedShoppingList);

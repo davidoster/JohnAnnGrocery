@@ -5,13 +5,14 @@
  */
 package models;
 
+import interfaces.IGroceryStore;
 import java.util.List;
 
 /**
  *
  * @author mac
  */
-public class GroceryStore {
+public class GroceryStore implements IGroceryStore {
 
     private String name;
     private Human owner;
@@ -58,6 +59,21 @@ public class GroceryStore {
         sb.append(", products=").append(products);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public List<ProcessedGroceryProduct> processOrder(Human employee, Human customer, List<GroceryProduct> shoppingList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public double calculateTotal(List<ProcessedGroceryProduct> processedShoppingList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ProcessedShoppingList payOrder(Human employee, Human customer, List<ProcessedGroceryProduct> processedShoppingList, double totalAmount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -16,4 +16,12 @@ public class ProcessedShoppingList {
     List<ProcessedGroceryProduct> processedShoppingList;
     double amount;
 
+    public ProcessedShoppingList() {
+
+    }
+
+    public double getAmount() {
+        return (this.amount);
+    }
+
 }

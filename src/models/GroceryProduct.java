@@ -16,21 +16,21 @@ import java.util.Objects;
 public class GroceryProduct implements IGroceryStore {
 
     private Product product;
-    private int quantity;
+    private double quantity;
 
     public GroceryProduct() {
     }
 
-    public GroceryProduct(Product product, int quantity) {
+    public GroceryProduct(Product product, double quantity) {
         this.product = product;
         this.quantity = quantity;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 
@@ -85,7 +85,11 @@ public class GroceryProduct implements IGroceryStore {
 
     @Override
     public double calculateTotal(List<ProcessedGroceryProduct> processedShoppingList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double sum = 0;
+        for (ProcessedGroceryProduct processedGroceryProduct : processedShoppingList) {
+            sum += processedGroceryProduct.getAmount();
+        }
+        return (sum);
     }
 
     @Override

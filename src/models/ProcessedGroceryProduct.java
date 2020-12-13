@@ -21,11 +21,12 @@ public class ProcessedGroceryProduct extends GroceryProduct {
     }
 
     public double getAmount() {
-        return amount;
+        this.setAmount();
+        return this.amount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    private void setAmount() {
+        this.amount = this.getProduct().getPrice() * this.getQuantity();
     }
 
     @Override
